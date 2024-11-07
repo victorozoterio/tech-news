@@ -47,10 +47,12 @@ img {
 .container {
     max-width: 1280px;
     padding-inline: 32px; /* Aplica um padding no eixo x (horizontal) do container */
+    margin-inline: auto; /* Centraliza o container na tela */
 }
 
 main {
     margin-top: 40px;
+    gap: 80px;
 }
 
 .content-tag {
