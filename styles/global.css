@@ -40,16 +40,15 @@ h1, h2, h3 {
     font: inherit; /* Esquece o padrão do navegador e herda a configuração do pai (body) */
 }
 
+img {
+    max-width: 100%;
+}
+
 .container {
     max-width: 1280px;
     padding-inline: 32px; /* Aplica um padding no eixo x (horizontal) do container */
 }
 
-/* utility-first */
-.grid {
-    display: grid;
-}
-
-.grid-flow-col {
-    grid-auto-flow: column;
+main {
+    margin-top: 40px;
 }
