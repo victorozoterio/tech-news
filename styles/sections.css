@@ -2,6 +2,23 @@
     img {
         height: 100%;
         object-fit: cover;
-        border-radius: 4px;
+    }
+    
+    /* aplica um degradê/sombra na imagem principal */
+    .card {
+        border-radius: 4px; /* não funciona sem o overflow devido ao transbordamento da caixa*/
+        overflow: hidden; /* esconde tudo oq passar da caixa */
+        position: relative;
+        &::before { /* mesma coisa que .card::before */
+            content: ""; /* aplica uma imagem/conteúdo por cima da imagem principal */
+            position: absolute;
+            inset: 0;
+            top: 50%;
+            background: linear-gradient(
+                180deg,
+                transparent 0%,
+                #020617 100%
+            );
+        }
     }
 }
