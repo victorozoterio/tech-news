@@ -23,3 +23,19 @@
     border-inline: none;
     justify-content: space-between;
 }
+
+@media (width <= 28em) {
+    .desktop-only {
+        display: none;
+    }
+
+    #primary {
+        padding-block: 16px;
+    }
+
+    #secondary {
+        overflow-x: auto; /* Adiciona uma rolagem horizontal */
+        gap: 32px;
+        white-space: nowrap
+    }
+}

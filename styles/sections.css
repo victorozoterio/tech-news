@@ -99,6 +99,10 @@ section header {
     h3 {
         margin-block: 8px 4px;
     }
+
+    p {
+        -webkit-line-clamp: 4;
+    }
 }
 
 aside {
@@ -110,6 +114,7 @@ aside {
     
     h3 {
         margin-top: 8px;
+        -webkit-line-clamp: 2;
     }
 
     img {
@@ -117,4 +122,24 @@ aside {
         aspect-ratio: 1/1; /* quadrado perfeito*/
         object-fit: cover;
     }
+}
+
+@media (width <= 28em) {
+    .desktop-only {
+        display: none;
+    }
+
+    #featured {
+        grid-auto-flow: row;
+
+        & > figure:nth-child(1) {
+            height: 100vh;
+            max-height: 416px;
+        }
+    }
+
+   h2 {
+    padding-right: 7%;
+   }
+
 }
