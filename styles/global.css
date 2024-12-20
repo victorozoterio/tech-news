@@ -90,11 +90,14 @@ main {
 
 @media (width <= 28em) {
     .container {
-        max-width: 448px;
         padding-inline: 16px; /* Aplica um padding no eixo x (horizontal) do container */
     }
 
     main {
         margin-block: 16px;
+    }
+
+    .card {
+        width: calc(100vw - 32px);
     }
 }
