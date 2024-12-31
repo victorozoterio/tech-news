@@ -64,7 +64,11 @@ section header {
 #weekly {
     grid-area: weekly;
 
-    &>div { /* primeiro nivel de div na section weekly */
+    header h3 {
+        color: var(--text-color-secondary);
+    }
+
+    & > div { /* primeiro nivel de div na section weekly */
         grid-template-columns: repeat(4, 292px);
     }
 
@@ -90,14 +94,29 @@ section header {
 
 #ai {
     grid-area: ai;
+    
+    header {
+        align-items: baseline;
+    }
+
     img {
         width: 176px;
         aspect-ratio: 1/1;
         object-fit: cover;
     }
 
-    h3 {
+    header h3 {
+        color: var(--text-color-secondary);
+    }
+
+    div h3 {
         margin-block: 8px 4px;
+        -webkit-line-clamp: 2;
+    }
+
+    p {
+        color: var(--text-color-secondary);
+        -webkit-line-clamp: 4;
     }
 }
 
@@ -106,10 +125,16 @@ aside {
 }
 
 #more {
-    margin-top: 32px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    header h3 {
+        color: var(--text-color-secondary);
+    }
     
-    h3 {
+    div h3 {
         margin-top: 8px;
+        -webkit-line-clamp: 2;
     }
 
     img {
@@ -117,4 +142,57 @@ aside {
         aspect-ratio: 1/1; /* quadrado perfeito*/
         object-fit: cover;
     }
+}
+
+@media (width <= 30em) {
+    .desktop-only {
+        display: none;
+    }
+
+    .card {
+        width: calc(100vw - 32px);
+    }
+
+    h2, p {
+        padding-right: 6%;
+   }
+
+    #featured {
+        grid-auto-flow: row;
+
+        & > figure:nth-child(1) {
+            height: 100vh;
+            max-height: 416px;
+        }
+    }
+
+   #weekly {
+        & > div { /* primeiro nivel de div na section weekly */
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        img {
+            width: calc(100vw - 32px);
+            height: 160px;
+        }
+    }
+
+    #ai {
+        article {
+            grid-template-columns: 0.4fr 1fr;
+            grid-template-areas: 
+            "photo content";
+
+            & div:nth-child(1) {
+                grid-area: content
+            }
+
+            & div:nth-child(2) {
+                grid-area: photo
+            }
+        }
+    }
+
 }

@@ -18,8 +18,25 @@
 }
 
 #secondary {
+    overflow-x: auto; /* Adiciona uma rolagem horizontal */
     padding-block: 14px;
     border: solid 1px var(--stroke-color);
     border-inline: none;
-    justify-content: space-between;
+    gap: 32px;
+    justify-content: space-around;
+    white-space: nowrap;
+}
+
+@media (width <= 30em) {
+    .desktop-only {
+        display: none;
+    }
+
+    #primary {
+        padding-block: 16px;
+    }
+
+    #secondary {
+        justify-content: inherit;
+    }
 }

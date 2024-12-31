@@ -34,3 +34,17 @@
 .text-sm {
     font: var(--text-sm);
 }
+
+.desktop-only {
+    display: initial;
+}
+
+@media (width <= 30em) {
+    .desktop-only {
+        display: none;
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
